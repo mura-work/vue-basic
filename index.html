@@ -2,15 +2,23 @@
 <head>
   <meta charset="utf-8">
   <title>vue-lesson</title>
+  <link rel="stylesheet" href="index.css">
 </head>
 <body>
-  <h1>hello world</h1>
+  <h1>todo app</h1>
   <div id="app">
-    <p>{{message}}</p>
-    <button v-on:click="clickHandler">
-      message
-    </button>
-    <input type="text" v-model="message" />
+    {{newItem}}
+    <form v-on:submit.prevent>
+      <input type="text" v-model="newItem">
+      <button v-on:click="addItem">Add</button>
+    </form>
+    <ul>
+      <li v-for="(todo, index) in todos">
+        <input type="checkbox" v-model="todo.isDone">
+        <span v-bind:class="{ done: todo.isDone}">{{todo.item}}</span>
+        <button v-on:click="deleteItem(index)">delete</button>
+      </li>
+    </ul>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
   <script src="main.js"></script>
