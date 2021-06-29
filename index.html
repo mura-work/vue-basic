@@ -6,7 +6,9 @@
 <body>
   <h1>hello world</h1>
   <div id="app">
-    <a v-bind:href="url">リンク</a>
+    <div v-for="lan in languages" v-bind:key="lan">
+      {{lan}}
+    </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
   <script src="main.js"></script>
