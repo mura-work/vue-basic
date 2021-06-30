@@ -1,23 +1,12 @@
-Vue.component('fruits-list-title', {
-  template: '<h1>フルーツ一覧</h1>'
+Vue.component('button-counter', {
+  data: function(){
+    return {
+      count: 0
+    }
+  },
+  template: '<button v-on:click="count++">{{ count }}</button>'
 })
 
-Vue.component('fruits-list', {
-  template: '<div><fruits-list-title></fruits-list-title></div>'
-})
-
-var FruitsListsTitle = Vue.extend({
-  template: '<li>aaa</li>'
-})
-
-var FruitsList = Vue.extend({
-  template: '<ul>bb</ul>'
-})
-
-new Vue({
-  el: '#app',
-  components: {
-    'fruits-list-title': FruitsListsTitle,
-    'fruits-list': FruitsList
-  }
+var app = new Vue({
+  el: '#app'
 })
