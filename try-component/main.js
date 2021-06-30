@@ -1,12 +1,10 @@
-Vue.component('button-counter', {
+Vue.component('list-items',{
+  template: '<ul><li>{{num1}}</li><li>{{num2}}</li><li>{{num3}}</li></ul>',
   data: function(){
-    return {
-      count: 0
-    }
-  },
-  template: '<button v-on:click="count++">{{ count }}</button>'
+    return {num1: 5, num2: 2, num3: 8}
+  }
 })
 
-var app = new Vue({
+new Vue({
   el: '#app'
 })
