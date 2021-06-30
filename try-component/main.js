@@ -10,9 +10,14 @@ var FruitsListsTitle = Vue.extend({
   template: '<li>aaa</li>'
 })
 
-
-new Vue({
-  el: '#app'
+var FruitsList = Vue.extend({
+  template: '<ul>bb</ul>'
 })
 
-new FruitsListsTitle().$mount('fruits-list')
+new Vue({
+  el: '#app',
+  components: {
+    'fruits-list-title': FruitsListsTitle,
+    'fruits-list': FruitsList
+  }
+})
